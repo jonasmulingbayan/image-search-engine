@@ -1,0 +1,156 @@
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Poppins', san-serif;
+  box-sizing: border-box;
+}
+body{
+  background:#313131;
+  color: #fff;
+  overflow-x: hidden;
+}
+h1{
+  text-align:center;
+  margin: 100px auto 50px;
+  font-weight:600;
+  text-transform: uppercase;
+}
+form{
+  width:90%;
+  max-width:600px;
+  margin:auto;
+  height:60px;
+  background: #000;
+  display:flex;
+  align-items:center;
+  border-radius:8px;
+}
+form input{
+  flex:1;
+  height:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#fff;
+  font-size:18px;
+  padding: 0 85px 0 15px;
+}
+form input:focus{
+  border: 1px solid #ff3929;
+  border-radius:8px 0 0 8px;
+}
+form #search{
+  padding:0 40px;
+  height:100%;
+  background:#ff3929;
+  color:#fff;
+  font-size:18px;
+  border:0;
+  outline:0;
+  border-top-right-radius:8px;
+  border-bottom-right-radius:8px;
+  cursor:pointer;
+}
+form #search:hover{
+  background: #fff;
+  color:#313131;
+}
+
+form #clear{
+  padding:3px 7px;
+  font-size:20px;
+  margin-right: 10px;
+  margin-left:-75px;
+  cursor: pointer;
+  display: none;
+}
+::placeholder{
+  color:#fff;
+  font-size:18px;
+}
+#show-more-btn{
+  background: #ff3929;
+  color:#fff;
+  border:0;
+  outline:0;
+  padding:10px 20px;
+  border-radius:4px;
+  margin:10px auto 100px;
+  cursor:pointer;
+  display:none;
+}
+#search-result {
+  width: 80%;
+  margin: 100px auto 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+#search-result img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Ensure all images have opacity 1 by default */
+#search-result img {
+  opacity: 1;
+}
+
+/* Scale the hovered image */
+#search-result img:hover {
+  transform: scale(1.02);
+  border: 2px solid #ff3929;
+}
+
+/* Dim other images when one is hovered */
+#search-result:hover img:not(:hover) {
+  opacity: 0.5;
+}
+
+@media(max-width:767px){
+#search-result{
+  width:80%;
+  margin:100px auto 50px;
+  display:flex;
+  flex-direction:column;
+}
+
+}
+
+@media(max-width:700px){
+  .for-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 15px;
+  }
+  form{
+    width: 70%;
+  }
+  form input{
+    font-size:16px;
+  }
+  form #search{
+    padding:0 25px;
+    font-size:16px;
+  }
+  
+  form #clear{
+    padding:3px 7px;
+    font-size:16px;
+  }
+  ::placeholder{
+    font-size:16px;
+  }
+}
+
+@media(max-width:500px){
+  form{
+    width: 100%;
+    margin: 0;
+  }
+}
